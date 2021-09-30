@@ -3,11 +3,12 @@ import millify from "millify";
 import { Typography, Row, Col, Statistic } from "antd";
 import { Link } from "react-router-dom";
 import { useGetCryptosQuery } from "../services/crypto-api";
+import { Cryptocurrencies, News } from ".";
 
 const { Title } = Typography;
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
 
   console.log(data, "data");
@@ -56,6 +57,16 @@ const Homepage = () => {
           <Link to="/cryptocurrencies">Show More</Link>
         </Title>
       </div>
+      <Cryptocurrencies simplified />
+      <div className="home-heading-container">
+        <Title level={2} className="home-title">
+          Latest Crypto News
+        </Title>
+        <Title level={3} className="show-more">
+          <Link to="/news">Show More</Link>
+        </Title>
+      </div>
+      <News simplified />
     </Fragment>
   );
 };
