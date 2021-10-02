@@ -20,12 +20,3 @@ export const cryptoApi = createApi({
 });
 
 export const { useGetCryptosQuery } = cryptoApi;
-
-// var options = {
-//   method: "GET",
-//   url: "https://coinranking1.p.rapidapi.com/stats",
-//   headers: {
-//     "x-rapidapi-host": "coinranking1.p.rapidapi.com",
-//     "x-rapidapi-key": "1fa90e62cdmsh80fcc6609e07838p175df7jsn0dc1f284c305",
-//   },
-// };
